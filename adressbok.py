@@ -1,21 +1,21 @@
 import json
 import time
 
-### Read the file
+# Read the file
 try:
     with open("adressbok.json", encoding="utf-8") as f:
         adressbok = json.load(f)
 except FileNotFoundError:
     adressbok = {}
 
-print("=" * 31 + "\n||\033[7m P  H  O  N  E  B  O  O  K \033[0m||\n" + "=" * 31)
+print("=" * 32 + "\n||\033[7m N  O  T  E ""\033[0m"f" {chr(128366)}  \033[7m"" B  O  O  K " + "\033[0m||\n" + "=" * 32)
 
 while True:
     print("\n\033[1m1. Add\033[0m")
     print("\033[1m2. Remove\033[0m")
     print("\033[1m3. Search\033[0m")
     print("\033[1m4. Exit and save\n\033[0m")
-    print("=" * 31)
+    print("=" * 32)
     selection = input("\n\033[2mChoose one alternative:\033[0m ")
 
     # Add a name and number
@@ -26,7 +26,7 @@ while True:
         adressbok[name] = number
         print(f"\033[2m{name} ({number}), is added.\033[0m\n")
         time.sleep(1)
-        print("=" * 31)
+        print("=" * 32)
 
     # Remove a name with its number
     elif "2" in selection:
@@ -39,7 +39,7 @@ while True:
             time.sleep(0.5)
             print("\033[2mNot found.\033[0m")
         time.sleep(1)
-        print("=" * 31)
+        print("=" * 32)
 
     # Search for a name and number in the file
     elif "3" in selection:
@@ -53,7 +53,7 @@ while True:
         else:
             print()
             print(f"{'NAME':<17}{'NUMBER':<12}")
-            print("-" * 31)
+            print("-" * 32)
             for name, number in adressbok.items():
                 print(f"{name:<17}{number:<12}")
             print("\n\033[3m1. Return to main menu")
@@ -61,7 +61,7 @@ while True:
             selection = input("\n\033[2m1 / 2:\033[0m ")
             if "2" in selection:
                 break
-        print("\n" + "=" * 31)
+        print("\n" + "=" * 32)
 
     # Exit the script
     elif "4" in selection:
